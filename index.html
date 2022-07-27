@@ -9,6 +9,29 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <div class="container"></div>
+    <div class="app">
+        <div class="menu-container">
+            <div class="menu-title">Options</div>
+            <div>
+                <label for="pen-color">Pen Color</label>
+                <input type="color" name="pen-color" id="pen-color">
+            </div>
+            <div>
+                <label for="background-color">Background Color</label>
+                <input type="color" name="background-color" id="background-color">
+            </div>
+            <div>
+                <label for="show-grid">Show Grid</label>
+                <input type="checkbox" name="show-grid" id="show-grid">
+            </div>
+            <div class="range-option">
+                <label for="grid-size">Grid Size</label>
+                <input type="range" name="grid-size" id="grid-size" min="3" max="64" step="1">
+            </div>
+        </div>
+        <div class="grid-frame">
+            <div class="container"></div>
+        </div>
+    </div>
 </body>
 </html>
