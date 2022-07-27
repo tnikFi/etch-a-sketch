@@ -1,22 +1,21 @@
 function constructGrid(width, height) {
-    let rows = [];
+    let cells = [];
     for (var i = 0; i < height; i++) {
-        let row = document.createElement("div");
-        row.classList.add("grid-row");
         for (var j = 0; j < width; j++) {
             let cell = document.createElement("div");
             cell.classList.add("grid-cell");
+            cell.style.gridArea = `${i+1} / ${j+1}`;
             cell.setAttribute("data-x", j);
-            row.appendChild(cell);
+            cell.setAttribute("data-y", i);
+            cells.push(cell);
         }
-        row.setAttribute("data-y", i);
-        rows.push(row);
     }
-    return rows;
+    return cells;
 }
 
 const container = document.querySelector("div.container");
-let rows = constructGrid(50, 50);
-rows.forEach(row => {
-    container.appendChild(row);
+let cells = constructGrid(16, 16);
+cells.forEach(cell => {
+    container.appendChild(cell);
+    console.log("Added")
 });
