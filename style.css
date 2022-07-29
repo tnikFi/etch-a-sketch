@@ -150,7 +150,7 @@ input[type="color"] {
 
 /* Cell background color */
 
-.grid-cell:not(.draw.hover) {
+.grid-cell:not(.draw):not(.hover) {
     background-color: var(--background-color);
 }
 
