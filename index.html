@@ -9,20 +9,30 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
+    <div class="header">
+        <h1>Etch-a-sketch</h1>
+    </div>
     <div class="app">
         <div class="menu-container">
-            <div class="menu-title">Options</div>
+            <h2>Options</h2>
             <div>
                 <label for="pen-color">Pen Color</label>
-                <input type="color" name="pen-color" id="pen-color">
+                <div class="input-container">
+                    <input type="color" name="pen-color" id="pen-color">    
+                </div>
             </div>
             <div>
                 <label for="background-color">Background Color</label>
-                <input type="color" name="background-color" id="background-color">
+                <div class="input-container">
+                    <input type="color" name="background-color" id="background-color">
+                </div>
             </div>
             <div>
                 <label for="show-grid">Show Grid</label>
-                <input type="checkbox" name="show-grid" id="show-grid">
+                <div class="input-container checkbox-container">
+                    <input type="checkbox" name="show-grid" id="show-grid">
+                    <span class="checkmark"></span>
+                </div>
             </div>
             <div class="range-option">
                 <label for="grid-size">Grid Size</label>
@@ -30,8 +40,13 @@
             </div>
         </div>
         <div class="grid-frame">
+            <div class="grid-size">16 &times; 16</div>
             <div class="container"></div>
+            <div class="grid-position">0,0</div>
         </div>
+    </div>
+    <div class="footer">
+        Copyright &copy; 2022 tnikFi
     </div>
 </body>
 </html>
