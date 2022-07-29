@@ -6,6 +6,8 @@ const sizeLabel = document.querySelector(".grid-size");
 const positionLabel = document.querySelector(".grid-position")
 const penColorPicker = document.querySelector("#pen-color");
 const backgroundColorPicker = document.querySelector("#background-color");
+const gridEnabled = document.querySelector("#show-grid")
+const gridSizeSlider = document.querySelector("#grid-size");
 
 let mouseIsDown = false
 let penColor = null;
@@ -58,7 +60,9 @@ function constructGrid(width, height) {
         container.appendChild(cell);
         cell.addEventListener("mouseover", onCellHover);
         cell.addEventListener("mouseout", onCellOut);
-        cell.addEventListener("click", drawCell);
+        cell.addEventListener("click", e => {
+            drawCell(e.target);
+        });
     })
     sizeLabel.innerText = `${width} × ${height}`
 }
@@ -80,5 +84,17 @@ penColorPicker.addEventListener("change", watchPenColorPicker);
 
 backgroundColorPicker.addEventListener("input", watchBackgroundColorPicker);
 backgroundColorPicker.addEventListener("change", watchBackgroundColorPicker);
+
+gridEnabled.addEventListener("input", e => {
+    if (e.target.checked) {
+        root.style.setProperty("--grid-gap", "1px");
+    } else {
+        root.style.setProperty("--grid-gap", "0px");
+    }
+})
+
+gridSizeSlider.addEventListener("input", e => {
+    constructGrid(e.target.value, e.target.value);
+})
 
 constructGrid(16, 16);
