@@ -1,3 +1,9 @@
+/* Drawing variables */
+
+:root {
+    --background-color: white;
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -139,5 +145,17 @@ input[type="color"] {
 }
 
 .grid-cell {
-    background-color: white;
+    transition: all 0.1s;
+}
+
+/* Cell background color */
+
+.grid-cell:not(.draw.hover) {
+    background-color: var(--background-color);
+}
+
+/* Cell hover effect */
+
+.grid-cell.hover:not(.draw) {
+    background-color: gray;
 }
