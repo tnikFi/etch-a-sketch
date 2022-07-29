@@ -19,6 +19,7 @@ function watchBackgroundColorPicker(e) {
 }
 
 function watchPenColorPicker(e) {
+    root.style.setProperty("--hover-color", this.value);
     penColor = this.value;
 }
 
