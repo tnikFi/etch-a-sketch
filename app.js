@@ -1,3 +1,9 @@
+const clearChildren = parent => parent.querySelectorAll("*").forEach(child => child.remove());
+
+const container = document.querySelector("div.container");
+const sizeLabel = document.querySelector(".grid-size");
+const positionLabel = document.querySelector(".grid-position")
+
 function constructGrid(width, height) {
     let cells = [];
     for (var i = 0; i < height; i++) {
@@ -10,12 +16,10 @@ function constructGrid(width, height) {
             cells.push(cell);
         }
     }
-    return cells;
+    clearChildren(container);
+    cells.forEach(cell => {
+        container.appendChild(cell);
+    })
 }
 
-const container = document.querySelector("div.container");
-let cells = constructGrid(16, 16);
-cells.forEach(cell => {
-    container.appendChild(cell);
-    console.log("Added")
-});
+constructGrid(16, 16);
